@@ -1,6 +1,8 @@
 const fetch = require('node-fetch');
+const cors = require('cors');
 
 const realtime = async (req, res) => {
+    cors();
     try {
         const url = `https://api.openweathermap.org/data/2.5/weather?lat=${req.body.latitude}&lon=${req.body.longitude}&units=${req.body.units}&appid=${process.env.API_KEY}`;
         const apiResponse = await fetch(url);
@@ -39,6 +41,7 @@ const realtime = async (req, res) => {
 }
 
 const onecall = async (req, res) => {
+    cors();
     try {
         const url = `https://api.openweathermap.org/data/2.5/onecall?lat=${req.body.latitude}&lon=${req.body.longitude}&exclude=alerts,minutely&units=${req.body.units}&appid=${process.env.API_KEY}`;
         const apiResponse = await fetch(url);

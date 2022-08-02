@@ -1,6 +1,8 @@
 const fetch = require('node-fetch');
+const cors = require('cors');
 
 const geocoding = async (req, res) => {
+    cors();
     console.log('req.body', req.body);
     try {
         const apiResponse = await fetch(`https://api.openweathermap.org/geo/1.0/direct?q=${req.body.city}&appid=${process.env.API_KEY}`);
@@ -25,6 +27,7 @@ const geocoding = async (req, res) => {
 }
 
 const namePrefix = async (req, res) => {
+    cors();
     try {
         console.log(req.body);
         const apiResponse = await fetch(`https://wft-geo-db.p.rapidapi.com/v1/geo/cities?namePrefix=${req.body.cityPrefix}`, {
@@ -54,6 +57,7 @@ const namePrefix = async (req, res) => {
 }
 
 const latLong = async (req, res) => {
+    cors();
     try {
         console.log(req.body);
         const apiResponse = await fetch(`https://wft-geo-db.p.rapidapi.com/v1/geo/cities?location=${req.body.latitude}${req.body.longitude}&limit=1`, {
