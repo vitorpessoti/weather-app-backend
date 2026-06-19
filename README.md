@@ -3,7 +3,7 @@
 </h1>
 
 <h3 align="center">
-    ☀️ Uma api desenvolvida em Javascript que prove informações climáticas em tempo real.
+    ☀️ Uma api desenvolvida em Javascript que fornece informações climáticas em tempo real.
 </h3>
 
 <h4 align="center">
@@ -26,29 +26,28 @@ Tabela de conteúdos
 
 ## 💻 Sobre o projeto
 
-Em desenvolvimento
-
----
-
-## 🖥️ Regras de negócio
-
-#### 🖥️ Em desenvolvimento;
+Este projeto visa fornecer dados em tempo real sobre informações climáticas, baseado na localizaçao atual (latitude/longitude) ou informando uma localização específica manualmente.
 
 ---
 
 ## ⚙️ Funcionalidades
 
-- [x] Em desenvolvimento:
+- Buscar por uma cidade baseado no nome informado
+-- Caso haja mais de uma localidade com o mesmo nome ou prefixo, será retornada uma lista com as localidades encontradas
+
+- Obter latitude e longitude de um local através do nome da localidade
+
+- Obter informações de uma localização através de sua latitude e longitude
+
+- Obter informações em atuais sobre o clima em determinada localidade através de sua latitude e longitude
+-- Também pode ser informado em qual formato deseja visualizar as informações, conforme abaixo:
+--- `metric`: retorna em Celsius (ºC)
+--- `imperial`: retorna em Fahrenheit (ºF)
+--- `standard`: retorna em Kelvin (ºK)
 
 ## 🚀 Como executar o projeto
 
 Este projeto vai ser dividido em:
-1. Backend 
-2. App
-3. Frontend (Futuramente)
-
-💡 O App precisa que o Backend esteja sendo executado para funcionar.
-
 ### Pré-requisitos
 
 Antes de começar, você vai precisar ter instalado em sua máquina as seguintes ferramentas:
@@ -56,30 +55,68 @@ Antes de começar, você vai precisar ter instalado em sua máquina as seguintes
 
 #### 🎲 Rodando o Backend (servidor)
 
+Instalação e execução
+Pré-requisitos
+- Node.js v16.15.0 ou superior
+- Chaves de acesso às APIs utilizadas pelo projeto
+
+1. Clone o repositório
 ```bash
-# Versão v16.15.0 do Node
-# Verifique que você já possui os pré-requisitos instalados
-# Crie um banco de dados, as tabelas vão ser geradas automáticamente quando terminar todos esses passos
-# Clone este repositório
-$ git clone git@github.com:vitorpessoti/weather-app-backend.git
-# Acesse a pasta do projeto no terminal/cmd
-$ cd weather-app-backend
-# Instale as dependências
-$ npm install ou yarn install
-# Crie um arquivo .env na raiz do projeto
-$ touch .env ou crie um arquivo pela IDE
-# Vá para o arquivo .env.example e copie os dados do .env.example e cole no .env
-# Altere os dados do .env e mude para os dados do seu ambiente
-# APP_PORT= insira a porta que deseja rodar o servidor, geralmente usa-se a "3333".
-# API_KEY= aqui geralmente usa-se "localhost".
-# GEODB_HOST= insira o nome do banco de dados que você criou.
-# GEODB_KEY= insira o usuário do banco de dados, geralmente é "root".
-# Execute a aplicação em modo de desenvolvimento
-$ npm run dev ou yarn dev
-# O servidor iniciará na porta:3333 por padrão - acesse http://localhost:3333
-# Observações: 
-# Essa porta é referente ao APP_PORT presente no .env, se você alterar, terá que mudar a porta "3333" para a que você definiu.
+git clone git@github.com:vitorpessoti/weather-app-backend.git
+cd weather-app-backend
 ```
+
+2. Instale as dependências
+```bash
+npm install
+```
+
+ou
+
+```bash
+yarn install
+```
+
+3. Configure as variáveis de ambiente
+
+Crie um arquivo .env na raiz do projeto:
+```bash
+cp .env.example .env
+```
+
+Preencha as variáveis utilizando os valores do seu ambiente.
+
+Exemplo:
+```bash
+APP_PORT=3000
+API_KEY=SUA_API_KEY_OPENWEATHERMAP
+GEODB_HOST=HOST_GEODB_API
+GEODB_KEY=_SUA_API_KEY_GEODB
+```
+
+Por questões de segurança, as credenciais não são versionadas no repositório. Utilize suas próprias chaves de API e configurações de banco de dados.
+
+Para gerar as keys, acesse abaixo:
+- https://openweathermap.org/ (API_KEY)
+- https://rapidapi.com/wirefreethought/api/geodb-cities (GEODB_HOST e GEODB_KEY)
+
+4. Execute o projeto
+```bash
+npm run dev
+```
+
+ou
+
+```bash
+yarn dev
+```
+6. Acesse a aplicação
+
+Por padrão, o servidor estará disponível em:
+
+http://localhost:3000
+
+Caso a variável APP_PORT seja alterada, utilize a porta configurada no arquivo .env.
 ---
 
 ## 🛠 Tecnologias
@@ -93,12 +130,3 @@ As seguintes ferramentas foram usadas na construção do projeto:
 -   **[cosign](https://www.npmjs.com/package/cosign)**
 -   **[node-fetch](https://www.npmjs.com/package/node-fetch)**
 -   **[dotENV](https://github.com/motdotla/dotenv)**
-
-#### **Utilitários**
-
--   Editor:  **[Visual Studio Code](https://code.visualstudio.com/)**
--   Teste de API:  **[Insomnia](https://insomnia.rest/)**
-
-## 🦸 Autor
-
-
