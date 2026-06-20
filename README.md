@@ -1,7 +1,7 @@
 <h1  align="center"> Weather App API</h1>
 
 ## Languages
-English version of docs is available [here](https://github.com/vitorpessoti/weather-app/blob/main/README_ENG.md)
+English version of docs is available [here](https://github.com/vitorpessoti/weather-app-backend/blob/main/README_ENG.md)
 
 ---
 <h3  align="center">☀️ Uma api desenvolvida em Javascript que fornece informações climáticas em tempo real.</h3>
@@ -33,10 +33,10 @@ Este projeto visa fornecer dados em tempo real sobre informações climáticas, 
 - Obter latitude e longitude de um local através do nome da localidade
 - Obter informações de uma localização através de sua latitude e longitude
 - Obter informações em atuais sobre o clima em determinada localidade através de sua latitude e longitude
--- Também pode ser informado em qual formato deseja visualizar as informações, conforme abaixo:
---- `metric`: retorna em Celsius (ºC)
---- `imperial`: retorna em Fahrenheit (ºF)
---- `standard`: retorna em Kelvin (K)
+- - Também pode ser informado em qual formato deseja visualizar as informações, conforme abaixo:
+- - - `metric`: retorna em Celsius (ºC)
+- - - `imperial`: retorna em Fahrenheit (ºF)
+- - - `standard`: retorna em Kelvin (K)
 
 <div id="configurando-o-projeto"></div>
 
